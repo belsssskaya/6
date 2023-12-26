@@ -1,11 +1,18 @@
 class Author:
-    pass
+    def __init__(self, name):
+        self.name = name
 
 class Publication:
-    pass
+    def __init__(self, title, year, author):
+        self.title = title
+        self.year = year
+        self.author = author
 
 class Journal:
-    pass
+    def __init__(self, name):
+        self.name = name
+        self.authors = []
+        self.publications = []
 
     def add_author(self, author):
         pass

@@ -15,22 +15,34 @@ class Journal:
         self.publications = []
 
     def add_author(self, author):
-        pass
+        self.authors.append(author)
 
     def add_publication(self, publication):
-        pass
+        self.publications.append(publication)
 
     def display_contents(self):
         print(f"Журнал: {self.name}")
         print("Авторы:")
-        pass
+        for author in self.authors:
+            print(author.name)
+
         print("Публикации:")
-        pass
+        for publication in self.publications:
+            print(f"Название: {publication.title}, Год: {publication.year}")
 
     def display_representation(self):
         print(f"Журнал: {self.name}")
         print("Авторы и их публикации:")
-        pass
+        for author in self.authors:
+            print(f"Автор: {author.name}")
+            publications_by_author = [publication.title for publication in self.publications if
+                                      publication.author == author]
+            if publications_by_author:
+                print("Публикации:")
+                for publication in publications_by_author:
+                    print(publication)
+            else:
+                print("Нет публикаций этого автора")
 
 
 journals = []
